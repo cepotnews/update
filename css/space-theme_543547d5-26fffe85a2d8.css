@@ -1,0 +1,566 @@
+/* =============================================
+   ELEGANT PURPLE + GOLD THEME
+   Deep purple + antique gold
+   Purple:    #3C2A54 / #261838
+   Gold:      #D4AF37 / #E7D3A1
+   Dark:      #080806–#121012
+   ============================================= */
+
+/* --- Body / Global Background --- */
+body {
+    background-color: #0a0908 !important;
+    color: #faf3e0 !important;
+}
+
+/* Soft neon glow on page body */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(198, 161, 90, 0.14) 0%, transparent 52%),
+        radial-gradient(ellipse at 80% 70%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(10, 8, 4, 1) 0%, #0a0908 100%);
+}
+
+/* --- Root CSS Variable Overrides --- */
+:root {
+    /* Primary brand — elegant purple */
+    --primary: #261838;
+
+    /* Body & page backgrounds */
+    --body-theme-bg: #0a0908;
+
+    /* ── Announcement ── */
+    --announcement-cntr-bg: #3C2A54;
+    --announcement-cntr-color: #faf3e0;
+    --announcement-cntr-section-announcement-bg: #3C2A54;
+    --announcement-cntr-section-announcement-color: #D4AF37;
+    --announcement-cntr-list-li-color: #D4AF37;
+
+    /* ── Banner ── */
+    --banner-bg: #3C2A54;
+    --banner-carousel-indicators-li-border: 1px solid #D4AF37;
+    --banner-carousel-indicators-active-bg: #261838;
+    --banner-carousel-indicators-active-border: #D4AF37;
+
+    /* ── Download APK ── */
+    --download-apk-content-bg: #3C2A54;
+    --download-apk-details-title-color: #faf3e0;
+    --download-apk-details-desc-color: #c4b590;
+    --download-apk-details-btn-bg: linear-gradient(180deg, #C6A15A 0%, #C6A15A 100%);
+    --download-apk-color: #faf3e0;
+    --download-apk-section-i-color: #D4AF37;
+    --download-apk-btn-color: #fff;
+    --download-apk-btn-bg: linear-gradient(to bottom, #261838 0%, #C6A15A 100%);
+    --download-apk-btn-hover-color: #fff;
+    --download-popup-modal-body-span-color: #faf3e0;
+    --download-popup-modal-header-title-color: #D4AF37;
+
+    /* ── Progressive Jackpot ── */
+    --home-progressive-jackpot-bg: linear-gradient(#3C2A54, #261838, #3C2A54);
+    --home-progressive-jackpot-color: #faf3e0;
+    --home-progressive-jackpot-outer-cntr-bg: #080806;
+    --home-progressive-jackpot-inner-cntr-bg: linear-gradient(#261838, #3C2A54);
+    --home-progressive-jackpot-border-cntr-bg: rgba(10, 8, 4, 0.6);
+    --home-progressive-jackpot-border-cntr-border: 3px solid #D4AF37;
+    --home-progressive-jackpot-jackpot-cntr-bg: linear-gradient(#261838, #3C2A54);
+    --home-progressive-jackpot-jackpot-inner-cntr-bg: #080806;
+    --home-progressive-jackpot-jackpot-border-cntr-border: 3px dotted #C6A15A;
+    --home-progressive-jackpot-jackpot-currency-color: #D4AF37;
+    --home-progressive-jackpot-jackpot-play-text-color: #D4AF37;
+    --home-progressive-jackpot-jackpot-play-text-label-color: #D4AF37;
+
+    /* ── Lottery ── */
+    --lottery-result-cntr-bg: #1a1022;
+    --lottery-result-cntr-color: #faf3e0;
+    --lottery-result-cntr-title-bg: #261838;
+    --lottery-result-cntr-title-color: #D4AF37;
+    --lottery-result-cntr-numbers-bg: #0a0908;
+
+    /* ── Sports ── */
+    --sports-platform-title-color: #faf3e0;
+    --sports-matches-cntr-bg: #10100a;
+    --sport-match-item-bg: #1a1426;
+    --sport-match-item-color: #faf3e0;
+    --sport-match-item-even-bg: #241e10;
+    --sport-match-item-even-color: #faf3e0;
+    --sport-match-item-info-cntr-bg: #120e08;
+    --sport-match-item-even-info-cntr-bg: #181625;
+    --sport-match-item-even-info-cntr-color: #faf3e0;
+    --sport-match-item-info-color: #faf3e0;
+    --sport-match-item-teams-span-color: #D4AF37;
+
+    /* ── Popular/Home Game Lists ── */
+    --popular-game-title-cntr-title-span-color: #fff;
+    --popular-game-title-cntr-title-span-bg: #261838;
+    --popular-game-title-cntr-title-span-after-bg: #261838;
+    --popular-game-title-cntr-content-border: 1px solid #261838;
+    --popular-game-title-cntr-content-game-list-game-item-game-name-color: #D4AF37;
+    --popular-game-title-cntr-content-game-list-game-item-provider-name-color: #faf3e0;
+    --popular-game-title-cntr-content-game-list-scrollbar-thumb-bg: #261838;
+
+    --popular-games-bg: transparent;
+    --popular-games-left-section-title-bg: #261838;
+    --popular-games-left-section-title-color: #faf3e0;
+    --popular-games-scrtabs-tab-cntr-bg: #261838;
+    --popular-games-nav-tabs-li-a-bg: #120e08;
+    --popular-games-nav-tabs-li-a-active-bg: rgba(92, 74, 10, 0.5);
+    --popular-games-scroll-arrow-bg: transparent;
+    --popular-games-scroll-arrow-color: #faf3e0;
+    --popular-games-tab-pane-bg: #10100a;
+    --popular-games-tab-content-border: 1px solid #261838;
+    --popular-games-list-game-item-hover-link-cntr-bg: rgba(10, 8, 4, 0.75);
+
+    --home-game-list-cntr-title-span-color: #fff;
+    --home-game-list-cntr-title-span-bg: #261838;
+    --home-game-list-cntr-title-span-after-bg: #261838;
+    --home-game-list-cntr-content-border: 1px solid #261838;
+    --home-game-list-cntr-content-game-list-game-item-game-name-color: #D4AF37;
+    --home-game-list-cntr-content-game-list-game-item-provider-name-color: #faf3e0;
+    --home-game-list-cntr-content-game-list-scrollbar-thumb-bg: #261838;
+    --home-game-list-game-player-color: #faf3e0;
+    --home-game-list-active-player-color: #faf3e0;
+    --home-game-list-game-player-container-bg: rgba(10, 8, 4, 0.75);
+
+    /* ── Home Info / Ticker ── */
+    --home-info-cntr-bg: #261838;
+    --home-info-cntr-border: 2px solid #D4AF37;
+    --home-info-cntr-tickercntr-bg: #10100a;
+
+    /* ── Arcade ── */
+    --arcade-games-cntr-bg: #261838;
+    --arcade-games-cntr-vendor-name-color: #faf3e0;
+    --arcade-games-cntr-filter-section-bg: #261838;
+    --arcade-games-cntr-filter-section-input-text-bg: #10100a;
+    --arcade-games-cntr-filter-section-input-text-color: #faf3e0;
+    --arcade-games-cntr-category-filter-link-color: #faf3e0;
+    --arcade-games-cntr-category-filter-link-active-bg: #C6A15A;
+    --arcade-games-cntr-category-filter-link-active-color: #fff;
+
+    /* ── Misc containers ── */
+    --sports-cntr-bg: #10100a;
+    --poker-game-types-bg: linear-gradient(to right, rgba(18,14,6,.5) 0%, rgba(50,40,14,.5) 50%, rgba(18,14,6,.5) 100%);
+    --poker-game-types-border: 4px solid #261838;
+    --poker-game-types-ul-li-p-color: #faf3e0;
+    --slot-jackpot-cntr-bg: rgba(18, 14, 6, 0.85);
+
+    /* ── Provider slide ── */
+    --provider-slide-bg: #261838;
+    --provider-slide-i-bg: rgba(212, 175, 55, 0.1);
+    --provider-slide-i-color: #D4AF37;
+    --provider-slide-i-hover-bg: rgba(212, 175, 55, 0.25);
+    --provider-slide-main-slide-item-bg: rgba(212, 175, 55, 0.08);
+    --provider-slide-main-slide-item-a-not-game-info-bg: #261838;
+    --provider-slide-main-slide-item-a-not-game-info-hover-bg: #C6A15A;
+    --provider-slide-main-slide-item-h5-color: #faf3e0;
+
+    /* ── Promotions ── */
+    --promotion-cntr-bg: #0c0a06;
+    --promotion-cntr-std-side-menu-li-a-bg: #261838;
+    --promotion-cntr-std-side-menu-li-a-color: #faf3e0;
+    --promotion-cntr-std-side-menu-a-true-bg: #C6A15A;
+    --promotion-cntr-std-side-menu-a-true-color: #fff;
+    --promotion-list-bg: #10100a;
+    --promotion-item-img-border: 1px solid #261838;
+    --promotion-item-btn-cntr-promotion-label-h2-h3-color: #faf3e0;
+    --promotion-item-click-for-get-promo-btn-bg: #261838;
+    --promotion-item-click-for-get-promo-btn-color: #fff;
+    --promotion-item-click-for-get-promo-btn-hover-bg: #C6A15A;
+    --promotion-item-details-bg: #0c0a06;
+    --promotion-item-details-color: #faf3e0;
+    --promotion-item-details-promotion-title-color: #D4AF37;
+    --promotion-item-details-click-for-get-promo-btn-bg: #261838;
+    --promotion-item-details-click-for-get-promo-btn-hover-bg: #C6A15A;
+
+    /* ── Std Forms / Buttons ── */
+    --std-form-cntr-bg: #120e08;
+    --std-form-title-bg: #261838;
+    --std-form-title-color: #faf3e0;
+    --std-form-content-bg: #1a1810;
+    --std-form-content-color: #c4b590;
+    --std-section-title-color: #faf3e0;
+    --std-section-title-before-bg: #C6A15A;
+    --std-reporting-cntrl-group-btn-primary-bg: #261838;
+    --std-reporting-cntrl-group-btn-primary-color: #fff;
+    --std-reporting-cntrl-group-btn-primary-border: transparent;
+    --std-reporting-cntrl-group-btn-primary-hover-bg: #C6A15A;
+    --std-form-note-bg: #3C2A54;
+    --std-form-note-color: #faf3e0;
+    --std-btn-group-btn-primary-bg: #261838;
+    --std-btn-group-btn-primary-color: #fff;
+    --std-btn-group-btn-primary-hover-bg: #C6A15A;
+    --std-btn-group-btn-primary-hover-color: #fff;
+    --std-btn-group-btn-primary-disabled-bg: #362e18;
+    --std-btn-group-btn-primary-disabled-color: #9a8a68;
+
+    /* ── Menus / Nav ── */
+    --std-side-menu-bg: #261838;
+    --std-side-menu-group-label-menu-a-bg: #1a1608;
+    --std-side-menu-group-label-menu-a-color: #faf3e0;
+    --std-side-menu-a-active-hover-bg: #2e2614;
+    --std-side-menu-a-active-hover-color: #D4AF37;
+    --std-side-menu-player-acc-section-bg: #3C2A54;
+    --std-side-menu-player-acc-section-color: #faf3e0;
+    --std-side-menu-player-acc-section-username-color: #D4AF37;
+    --std-side-menu-player-acc-section-wallet-cntr-bg: #060604;
+    --std-side-menu-player-acc-section-wallet-cntr-border: 1px solid #D4AF37;
+    --std-side-menu-menu-section-bg: #261838;
+    --std-side-menu-menu-section-color: #faf3e0;
+    --std-side-menu-menu-section-hr-border: #1a1608;
+    --std-side-menu-menu-section-hover-focus-true-bg: #1a1608;
+    --std-side-menu-menu-section-hover-focus-true-color: #f0d090;
+    --std-side-menu-group-label-bg: #140e06;
+
+    /* ── Top/Site Header ── */
+    --topbar-cntr-bg: #1a1608;
+    --topbar-left-section-item-color: #b8a480;
+    --topbar-left-section-item-a-hover-color: #D4AF37;
+    --topbar-left-section-language-selector-bg: #0c0a06;
+    --topbar-left-section-language-selector-li-border: 1px solid #140e08;
+    --site-header-bg: #161208;
+    --site-header-border: 4px solid #C6A15A;
+    --top-menu-li-a-color: #faf3e0;
+    --top-menu-li-true-hover-bg: #261838;
+    --top-menu-li-true-hover-a-color: #D4AF37;
+    --top-menu-game-list-btop: 4px solid #C6A15A;
+    --top-menu-game-list-bg: rgba(10, 8, 4, 0.95);
+    --top-menu-game-list-bbot: 10px solid #C6A15A;
+    --top-menu-game-list-li-a-background-bg: linear-gradient(90deg, rgba(198, 161, 90, 0) 0%, rgba(92, 74, 10, 0.71) 99.99%);
+    --top-menu-game-list-li-a-background-border: 1px solid #C6A15A;
+
+    /* ── Footer ── */
+    --footer-separator-border: 1px dotted #C6A15A;
+    --site-footer-border: 2px solid #C6A15A;
+    --site-footer-bg: linear-gradient(to right, #120e08 0%, #261838 100%) no-repeat center;
+    --site-footer-bi: linear-gradient(to right, #120e08 0%, #261838 100%);
+    --footer-links-li-a-color: #f0d090;
+    --footer-links-li-a-hover-color: #D4AF37;
+    --footer-links-li-li-a-border: 1px solid #2a2418;
+    --copyright-color: #8a7a60;
+    --footer-section-title-color: #faf3e0;
+    --footer-sitemap-icon-bg: #261838;
+    --footer-featured-product-bg: #3C2A54;
+    --footer-banking-card-bg: #3C2A54;
+
+    /* ── Login Panel ── */
+    --login-panel-login-btn-bg: linear-gradient(90deg, #DCC07A 0%, #C6A56E 50%, #8E6C42 100%);
+    --login-panel-login-btn-color: #fff;
+    --login-panel-login-btn-border: #E7D3A1;
+    --login-panel-login-btn-hover-bg: linear-gradient(90deg, #DCC07A 0%, #C6A56E 50%, #8E6C42 100%);
+    --login-panel-register-btn-bg: linear-gradient(90deg, #51386E 0%, #3E2A5C 50%, #2C1D44 100%);
+    --login-panel-register-btn-color: #fff;
+    --login-panel-register-btn-border: #E7D3A1;
+    --login-panel-register-btn-hover-bg: linear-gradient(90deg, #51386E 0%, #3E2A5C 50%, #2C1D44 100%);
+
+    /* ── Profile Bar ── */
+    --std-profile-bar-bg: #3C2A54;
+    --std-profile-bar-color: #faf3e0;
+    --std-profile-bar-a-color: #faf3e0;
+    --std-profile-bar-user-field-div-username-color: #D4AF37;
+    --std-profile-bar-user-field-loyalty-info-cntr-lp-field-border: 1px dotted #D4AF37;
+    --std-profile-bar-user-field-loyalty-info-cntr-lp-field-color: #D4AF37;
+    --std-profile-bar-ref-code-cntr-border: 1px dashed #C6A15A;
+    --std-profile-bar-ref-code-cntr-bg: #1a1608;
+    --std-profile-bar-ref-code-cntr-color: #D4AF37;
+
+    /* ── Modal ── */
+    --modal-content-bg: #10100a;
+    --modal-content-border: #10100a;
+    --modal-body-p-color: #f0d090;
+    --modal-footer-border: #2a2418;
+    --modal-footer-btn-primary-color: #fff;
+    --modal-footer-btn-primary-bg: #261838;
+    --modal-footer-btn-primary-hover-bg: #C6A15A;
+    --modal-btn-bg: #382e18;
+    --modal-btn-color: #faf3e0;
+    --modal-btn-border: 2px solid #382e18;
+    --modal-btn-hover-bg: #362c14;
+    --modal-btn-hover-color: #faf3e0;
+    --modal-header-close-color: #faf3e0;
+
+    /* ── Popover ── */
+    --popover-bg: #3C2A54;
+    --popover-border: #261838;
+    --popover-color: #faf3e0;
+    --popover-top-arrow-border: #261838;
+    --popover-top-arrow-after-border: #3C2A54;
+
+    /* ── Play Now / Free Play Buttons ── */
+    --play-now-bg: #261838;
+    --play-now-color: #fff;
+    --play-now-hover-bg: #DCC07A;
+    --play-now-hover-color: #fff;
+    --free-play-bg: linear-gradient(to bottom, #3a3018 0%, #2a2418 100%);
+    --free-play-hover-bg: linear-gradient(to bottom, #2a2418 0%, #3a3018 100%);
+
+    /* ── Game List ── */
+    --game-list-title-bg: #10100a;
+    --game-list-bg: #10100a;
+    --game-list-game-item-bg: #141018;
+    --game-list-game-name-bg: #C6A15A;
+    --game-list-game-name-color: #fff;
+    --game-list-wrapper-cntr-hover-bg: #080806;
+    --large-game-list-cntr-bg: rgba(15, 12, 4, 0.85);
+    --large-game-list-li-game-provider-img-bg: linear-gradient(335.7deg, #4a3a10 16.09%, rgba(92, 74, 10, 0.5) 49.24%, rgba(0, 0, 0, 0) 83.08%);
+    --large-game-list-li-game-provider-img-link-cntr-img-play-now-bg: #C6A15A;
+    --large-game-list-li-link-cntr-game-prov-img-bg: rgba(10, 8, 4, 0.75);
+    --provider-page-large-game-list-cntr-bg: rgba(15, 12, 4, 0.85);
+    --provider-info-bg: rgba(15, 12, 4, 0.85);
+
+    /* ── Notification / Info Center ── */
+    --info-center-title-bg: #1a1608;
+    --info-center-title-color: #faf3e0;
+    --info-center-bg: #1a1608;
+    --info-center-content-panel-bg: #140e08;
+    --info-center-content-panel-color: #faf3e0;
+    --info-center-content-panel-default-heading-bg: #2a2418;
+    --info-center-content-panel-default-heading-color: #faf3e0;
+    --info-center-content-title-color: #D4AF37;
+
+    /* ── Banking / Deposits / Withdrawals ── */
+    --deposit-cntr-formatted-balance-color: #D4AF37;
+    --deposit-cntr-copy-bank-acc-btn-color: #D4AF37;
+    --deposit-cntr-reveal-bank-acc-btn-bg: #261838;
+    --deposit-cntr-reveal-bank-acc-btn-hover-bg: #C6A15A;
+    --bank-info-cntr-carousel-indicators-li-hover-bg: #C6A15A;
+    --bank-info-block-bg: #1a1608;
+    --bank-info-block-hr-border-top: 1px solid #261838;
+    --last-transaction-table-border: 1px solid #261838;
+    --last-transaction-table-thead-bg: #261838;
+
+    /* ── User Info ── */
+    --user-info-color: #faf3e0;
+    --user-info-main-info-bg: rgba(255, 255, 255, 0.06);
+    --user-info-wallet-cntr-balance-color: #D4AF37;
+    --user-info-dropdown-menu-li-a-bg: #261838;
+    --user-info-dropdown-menu-li-a-color: #faf3e0;
+    --user-info-dropdown-menu-li-a-focus-bg: #C6A15A;
+    --user-info-vendor-balances-cntr-border: 3px solid #C6A15A;
+    --user-info-vendor-balances-cntr-bg: rgba(10, 8, 4, 0.9);
+    --user-info-vendor-balances-cntr-header-border: 2px solid #C6A15A;
+    --user-info-vendor-balances-cntr-header-strong-color: #D4AF37;
+    --user-info-item-a-btn-logout-bg: #5c4a10;
+    --user-info-item-a-btn-logout-hover-bg: #C6A15A;
+    --user-info-loyalty-point-span-color: #D4AF37;
+
+    /* ── Floating Action Btn ── */
+    --floating-action-btn-bg: linear-gradient(0deg, #C6A15A 0%, #261838 100%);
+    --floating-action-btn-border: 1px solid #D4AF37;
+    --floating-action-btn-bs: 0 4px 24px 0 rgba(198, 161, 90, 0.5);
+
+    /* ── Unread Announcements ── */
+    --unread-announcements-popup-border: 3px solid #C6A15A;
+    --unread-announcements-popup-before-border: 10px solid #C6A15A;
+
+    /* ── Claim / Bonus ── */
+    --claim-item-type-div-bg: #261838;
+    --claim-item-type-div-color: #faf3e0;
+    --claim-item-claim-btn-bg: #261838;
+    --claim-item-claim-btn-hover-bg: #C6A15A;
+    --claim-item-activation-btn-bg: #C6A15A;
+    --claim-item-activation-btn-hover-bg: #261838;
+    --bonus-slider-modal-modal-header-bg: #261838;
+    --bonus-slider-modal-modal-content-bg: #3C2A54;
+    --bonus-slider-modal-bonus-form-bg: #3C2A54;
+    --bonus-slider-modal-bonus-form-border: 2px solid #261838;
+    --bonus-controls-field-bonus-amount-color: #D4AF37;
+    --bonus-range-bubble-border: 2px solid #C6A15A;
+    --bonus-range-bubble-bg: #C6A15A;
+
+    /* ── Misc ── */
+    --a-color: #D4AF37;
+    --a-focus-hover-color: #C6A15A;
+    --form-control-bg: #1a1810;
+    --form-control-color: #c4b590;
+    --form-control-border: #2a2418;
+    --data-cntr-background-banner-bg: #3C2A54;
+    --data-cntr-background-others-bg: #0a0908;
+    --data-cntr-background-promotions-bg: #10100a;
+    --search-cntr-bg: #040415;
+    --search-header-title-color: #faf3e0;
+    --search-input-cntr-input-bg: #141018;
+    --search-input-cntr-input-border: 1px solid #2a2418;
+    --search-input-cntr-input-color: #faf3e0;
+    --recent-searches-cntr-history-item-bg: #141018;
+    --search-result-section-title-bg: #181220;
+    --top-tab-cntr-border: 2px solid #1a1608;
+    --top-tab-cntr-a-bg: #261838;
+    --top-tab-cntr-a-color: #faf3e0;
+    --top-tab-cntr-a-true-hover-bg: #1a1608;
+    --top-tab-cntr-a-true-hover-color: #f0d090;
+    --tab-content-cntr-bg: #3C2A54;
+    --progressbar-bg: #1a1426;
+    --progress-bg: #C6A15A;
+    --std-content-info-border: 1px solid #3C2A54;
+    --std-content-info-h2-color: #D4AF37;
+    --std-content-info-std-content-block-bg: #3C2A54;
+    --std-content-info-table-border: 1px solid #3C2A54;
+    --std-content-info-table-thead-tr-th-bg: #3C2A54;
+    --notification-popup-body-color: #faf3e0;
+    --notification-popup-body-title-bg: #0a0908;
+    --notification-popup-body-tabs-tab-item-bg: #10100a;
+    --notification-popup-body-footer-bg: linear-gradient(to bottom, #261838 0%, #C6A15A 100%);
+    --notification-list-item-data-seen-false-bg: #261838;
+    --notification-list-item-play-btn-bg: #C6A15A;
+    --notification-list-item-header-label-bg: #261838;
+    --loyalty-top-bar-cntr-bg: linear-gradient(82.95deg, #0a0908 -41.64%, #261838 138.36%);
+    --std-profile-bar-bg: #3C2A54;
+    --otp-hr-border: #C6A15A;
+    --otp-input-border: #C6A15A;
+    --request-otp-btn-contact-ver-link-border: 2px solid #C6A15A;
+    --request-otp-btn-contact-ver-link-color: #D4AF37;
+}
+
+/* --- Purple and gold accents --- */
+
+/* Glowing navbar / header */
+.navbar, .site-header, [class*="header"] {
+    box-shadow: 0 0 20px #261838 !important;
+}
+
+/* Header logo: image scales to the header slot, not intrinsic asset size */
+.site-header a.logo {
+    display: inline-block;
+    max-width: 100%;
+    max-height: clamp(40px, 7vw, 52px);
+    overflow: hidden;
+    line-height: 0;
+    vertical-align: middle;
+}
+.site-header a.logo img {
+    display: block;
+    max-height: clamp(40px, 7vw, 52px);
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: left center;
+}
+
+/* Glowing primary buttons */
+.btn-primary, .play-now, .std-btn-group .btn-primary {
+    box-shadow: 0 0 12px rgba(198, 161, 90, 0.5) !important;
+    transition: box-shadow 0.3s ease, background 0.3s ease !important;
+}
+.btn-primary:hover, .play-now:hover {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.7) !important;
+}
+
+/* Glow on links */
+a {
+    color: #D4AF37;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+a:hover, a:focus {
+    color: #C6A15A;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+}
+
+/* Navbar links */
+.navbar-default .navbar-nav > li > a,
+.navbar-inverse .navbar-nav > li > a {
+    color: #e8dcc0 !important;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #D4AF37 !important;
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+}
+
+/* Dark cards and panels */
+.panel, .card, .well {
+    background-color: #1a1810 !important;
+    border-color: #2e2818 !important;
+    color: #faf3e0 !important;
+}
+.panel-heading {
+    background-color: #261838 !important;
+    border-color: #261838 !important;
+    color: #faf3e0 !important;
+}
+
+/* Tables */
+.table > thead > tr > th,
+.table > tbody > tr > td {
+    border-color: #2a2418 !important;
+    color: #e8dcc0;
+}
+.table > thead > tr > th {
+    background-color: #1a1608;
+}
+.table-striped > tbody > tr:nth-child(odd) > td {
+    background-color: #141018 !important;
+}
+.table-hover > tbody > tr:hover > td {
+    background-color: #281c30 !important;
+}
+
+/* Form controls */
+.form-control {
+    background-color: #1a1810 !important;
+    border-color: #2a2418 !important;
+    color: #faf3e0 !important;
+    box-shadow: inset 0 1px 1px rgba(10, 8, 4, 0.3);
+}
+.form-control:focus {
+    border-color: #C6A15A !important;
+    box-shadow: inset 0 1px 1px rgba(10, 8, 4, 0.3), 0 0 10px rgba(198, 161, 90, 0.5) !important;
+}
+
+/* Dropdown menus */
+.dropdown-menu {
+    background-color: #1a1810 !important;
+    border-color: #261838 !important;
+    box-shadow: 0 6px 20px rgba(10, 8, 4, 0.8) !important;
+}
+.dropdown-menu > li > a {
+    color: #e8dcc0 !important;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    color: #fff !important;
+    background-color: #261838 !important;
+}
+
+/* Scrtabs (scrollable tabs) */
+.scrtabs-tab-container {
+    background-color: #261838 !important;
+}
+
+/* Pagination */
+.pagination > li > a,
+.pagination > li > span {
+    background-color: #1a1810 !important;
+    border-color: #2a2418 !important;
+    color: #e8dcc0 !important;
+}
+.pagination > .active > a,
+.pagination > .active > span {
+    background-color: #C6A15A !important;
+    border-color: #C6A15A !important;
+    color: #fff !important;
+}
+
+/* Alert styles */
+.alert {
+    background-color: #141018 !important;
+    border-color: #2e2818 !important;
+    color: #faf3e0 !important;
+}
+
+/* Star shimmer on headings */
+h1, h2, h3, h4, h5, h6 {
+    color: #faf3e0;
+}
+
+/* Glow on active nav items */
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+    background-color: #261838 !important;
+    box-shadow: 0 0 10px rgba(198, 161, 90, 0.5);
+}
